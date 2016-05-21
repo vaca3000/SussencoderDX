@@ -1,0 +1,13 @@
+<web-app xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+    <servlet>
+        <servlet-name>SussencoderDX</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SussencoderDX</servlet-name>
+        <url-pattern>/sussencoderdx/*</url-pattern>
+    </servlet-mapping>
+</web-app>
