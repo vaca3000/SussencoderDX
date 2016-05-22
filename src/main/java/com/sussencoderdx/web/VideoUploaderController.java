@@ -1,4 +1,4 @@
-package com.sussencoderdx.controller;
+package com.sussencoderdx.web;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,12 +14,17 @@ import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@Path("/videouploader")
+
+
+@Controller
+@RequestMapping("/")
 public class VideoUploaderController {
 
-	@POST
-	@Path("/upload")
+	@RequestMapping(value ="/upload", method = RequestMethod.GET)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	public Response uploadVideo(
 			@FormParam("file") InputStream uploadedVideo,
@@ -35,5 +40,12 @@ public class VideoUploaderController {
 		return Response.status(200).entity(output).build();
 
 	}
+	
+	@RequestMapping(value ="/test", method = RequestMethod.GET)
+		public String adress(){
+			return "index.html";
+		}
+	
+	
 	
 }
